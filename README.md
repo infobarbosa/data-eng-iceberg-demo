@@ -39,12 +39,10 @@ mkdir projeto-iceberg
 cd projeto-iceberg
 ```
 
-**2. Crie o arquivo `docker-compose.yml`:**
-Dentro da pasta `projeto-iceberg`, crie um arquivo com o nome `docker-compose.yml` e cole o seguinte conteúdo:
+**2. Crie o arquivo `compose.yml`:**
+Dentro da pasta `projeto-iceberg`, crie um arquivo com o nome `compose.yml` e cole o seguinte conteúdo:
 
 ```yaml
-version: "3"
-
 services:
   spark-iceberg:
     image: tabulario/spark-iceberg:3.5
@@ -114,13 +112,15 @@ networks:
 Execute o comando abaixo no seu terminal, dentro da pasta do projeto.
 
 ```bash
-docker-compose up -d
+docker compose up -d
+
 ```
 
 **4. Verifique se tudo está funcionando:**
 
 ```bash
-docker-compose ps
+docker compose ps
+
 ```
 
 Você deve ver os três contêineres (`spark-iceberg`, `rest-catalog`, `minio`) com o status `Up` ou `running`.
@@ -136,6 +136,7 @@ Esta pasta será mapeada para dentro do contêiner do Spark.
 
 ```bash
 mkdir -p data
+
 ```
 
 **2. Crie o arquivo `pedidos.csv` com os dados de exemplo:**
