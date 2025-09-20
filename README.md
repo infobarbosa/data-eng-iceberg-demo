@@ -1,5 +1,7 @@
-
 # Apache Iceberg com Spark e MinIO
+Author: Prof. Barbosa  
+Contact: infobarbosa@gmail.com  
+Github: [infobarbosa](https://github.com/infobarbosa)
 
 O objetivo deste projeto é aprender os conceitos fundamentais e os recursos avançados do Apache Iceberg de forma prática, utilizando um ambiente local com Spark e MinIO (um armazenamento de objetos compatível com S3).
 
@@ -12,13 +14,13 @@ Para seguir este roteiro, você precisará ter instalado em sua máquina:
 
 ## Estrutura do Roteiro
 
-1.  [Sessão 1: Configuração do Ambiente](https://www.google.com/search?q=%23sess%C3%A3o-1-configura%C3%A7%C3%A3o-do-ambiente-)
-2.  [Sessão 2: Preparação dos Dados](https://www.google.com/search?q=%23sess%C3%A3o-2-prepara%C3%A7%C3%A3o-dos-dados-)
-3.  [Sessão 3: Ingestão e Consulta de Dados](https://www.google.com/search?q=%23sess%C3%A3o-3-ingest%C3%A3o-e-consulta-de-dados-)
-4.  [Sessão 4: O Poder do Time Travel (Viagem no Tempo)](https://www.google.com/search?q=%23sess%C3%A3o-4-o-poder-do-time-travel-viagem-no-tempo-)
-5.  [Sessão 5: Evolução de Schema (Schema Evolution)](https://www.google.com/search?q=%23sess%C3%A3o-5-evolu%C3%A7%C3%A3o-de-schema-schema-evolution-)
-6.  [Sessão 6: Particionamento Otimizado](https://www.google.com/search?q=%23sess%C3%A3o-6-particionamento-otimizado-)
-7.  [Sessão 7: Manutenção de Tabelas](https://www.google.com/search?q=%23sess%C3%A3o-7-manuten%C3%A7%C3%A3o-de-tabelas-)
+1.  Sessão 1: Configuração do Ambiente
+2.  Sessão 2: Preparação dos Dados
+3.  Sessão 3: Ingestão e Consulta de Dados
+4.  Sessão 4: O Poder do Time Travel (Viagem no Tempo)
+5.  Sessão 5: Evolução de Schema (Schema Evolution)
+6.  Sessão 6: Particionamento Otimizado
+7.  Sessão 7: Manutenção de Tabelas
 
 -----
 
