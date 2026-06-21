@@ -48,7 +48,7 @@ services:
     image: tabulario/spark-iceberg:3.5.5_1.8.1
     container_name: spark-iceberg
     depends_on:
-      - rest-catalog
+      - rest
       - minio
     volumes:
       - ./data:/home/iceberg/data
@@ -56,20 +56,20 @@ services:
     environment:
       - SPARK_HOME=/opt/spark
       - SPARK_CONF_DIR=/opt/spark/conf
-      - SPARK_CATALOG_CATALOG-NAME=org.apache.iceberg.spark.SparkCatalog
-      - SPARK_CATALOG_CATALOG-NAME_CATALOG-IMPL=org.apache.iceberg.rest.RESTCatalog
-      - SPARK_CATALOG_CATALOG-NAME_URI=http://rest-catalog:8181
-      - SPARK_CATALOG_CATALOG-NAME_S3_ENDPOINT=http://minio:9000
-      - SPARK_CATALOG_CATALOG-NAME_S3_ACCESS-KEY-ID=admin
-      - SPARK_CATALOG_CATALOG-NAME_S3_SECRET-ACCESS-KEY=password
-      - SPARK_CATALOG_CATALOG-NAME_S3_PATH-STYLE-ACCESS="true"
+      - SPARK_CATALOG_DEMO=org.apache.iceberg.spark.SparkCatalog
+      - SPARK_CATALOG_DEMO_CATALOG_IMPL=org.apache.iceberg.rest.RESTCatalog
+      - SPARK_CATALOG_DEMO_URI=http://rest:8181
+      - SPARK_CATALOG_DEMO_S3_ENDPOINT=http://minio:9000
+      - SPARK_CATALOG_DEMO_S3_ACCESS_KEY_ID=admin
+      - SPARK_CATALOG_DEMO_S3_SECRET_ACCESS_KEY=password
+      - SPARK_CATALOG_DEMO_S3_PATH_STYLE_ACCESS="true"
       - SPARK_SQL_EXTENSIONS=org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions
     networks:
       - iceberg_net
 
-  rest-catalog:
+  rest:
     image: tabulario/iceberg-rest:1.6.0
-    container_name: rest-catalog
+    container_name: rest
     ports:
       - "8181:8181"
     environment:
@@ -106,7 +106,7 @@ networks:
 
 ```
 
-*Documentação:* Este arquivo define nossos três serviços e como eles se conectam. O Spark é configurado para usar o `rest-catalog` e para armazenar dados no `minio`.
+*Documentação:* Este arquivo define nossos três serviços e como eles se conectam. O Spark é configurado para usar o `rest` e para armazenar dados no `minio`.
 
 **3. Inicie o ambiente:**
 Execute o comando abaixo no seu terminal, dentro da pasta do projeto.
@@ -123,7 +123,7 @@ docker compose ps
 
 ```
 
-Você deve ver os três contêineres (`spark-iceberg`, `rest-catalog`, `minio`) com o status `Up` ou `running`.
+Você deve ver os três contêineres (`spark-iceberg`, `rest`, `minio`) com o status `Up` ou `running`.
 
 -----
 
