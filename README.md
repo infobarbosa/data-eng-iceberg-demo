@@ -93,11 +93,9 @@ services:
     ports:
       - "9001:9001"
       - "9000:9000"
-    command: >
-      /bin/sh -c "
-      mkdir -p /data/warehouse &&
-      minio server /data --console-address ':9001'
-      "
+    volumes:
+      - ./minio_data:/data
+    command: server /data --console-address ":9001"
     networks:
       - iceberg_net
     healthcheck:
