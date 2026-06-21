@@ -64,6 +64,7 @@ services:
       - SPARK_CATALOG_DEMO_S3_SECRET_ACCESS_KEY=password
       - SPARK_CATALOG_DEMO_S3_PATH_STYLE_ACCESS="true"
       - SPARK_SQL_EXTENSIONS=org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions
+      - AWS_REGION=us-east-1
     networks:
       - iceberg_net
 
@@ -79,6 +80,7 @@ services:
       - CATALOG_S3_ACCESS__KEY__ID=admin
       - CATALOG_S3_SECRET__ACCESS__KEY=password
       - CATALOG_S3_PATH__STYLE__ACCESS="true"
+      - AWS_REGION=us-east-1
     networks:
       - iceberg_net
 
