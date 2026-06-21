@@ -56,14 +56,14 @@ services:
     environment:
       - SPARK_HOME=/opt/spark
       - SPARK_CONF_DIR=/opt/spark/conf
-      - SPARK_CATALOG_CATALOG-NAME: org.apache.iceberg.spark.SparkCatalog
-      - SPARK_CATALOG_CATALOG-NAME_CATALOG-IMPL: org.apache.iceberg.rest.RESTCatalog
-      - SPARK_CATALOG_CATALOG-NAME_URI: http://rest-catalog:8181
-      - SPARK_CATALOG_CATALOG-NAME_S3_ENDPOINT: http://minio:9000
-      - SPARK_CATALOG_CATALOG-NAME_S3_ACCESS-KEY-ID: admin
-      - SPARK_CATALOG_CATALOG-NAME_S3_SECRET-ACCESS-KEY: password
-      - SPARK_CATALOG_CATALOG-NAME_S3_PATH-STYLE-ACCESS: "true"
-      - SPARK_SQL_EXTENSIONS: org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions
+      - SPARK_CATALOG_CATALOG-NAME=org.apache.iceberg.spark.SparkCatalog
+      - SPARK_CATALOG_CATALOG-NAME_CATALOG-IMPL=org.apache.iceberg.rest.RESTCatalog
+      - SPARK_CATALOG_CATALOG-NAME_URI=http://rest-catalog:8181
+      - SPARK_CATALOG_CATALOG-NAME_S3_ENDPOINT=http://minio:9000
+      - SPARK_CATALOG_CATALOG-NAME_S3_ACCESS-KEY-ID=admin
+      - SPARK_CATALOG_CATALOG-NAME_S3_SECRET-ACCESS-KEY=password
+      - SPARK_CATALOG_CATALOG-NAME_S3_PATH-STYLE-ACCESS="true"
+      - SPARK_SQL_EXTENSIONS=org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions
     networks:
       - iceberg_net
 
@@ -73,12 +73,12 @@ services:
     ports:
       - "8181:8181"
     environment:
-      - CATALOG_WAREHOUSE: s3a://warehouse/
-      - CATALOG_IO__IMPL: org.apache.iceberg.aws.s3.S3FileIO
-      - CATALOG_S3_ENDPOINT: http://minio:9000
-      - CATALOG_S3_ACCESS__KEY__ID: admin
-      - CATALOG_S3_SECRET__ACCESS__KEY: password
-      - CATALOG_S3_PATH__STYLE__ACCESS: "true"
+      - CATALOG_WAREHOUSE=s3a://warehouse/
+      - CATALOG_IO__IMPL=org.apache.iceberg.aws.s3.S3FileIO
+      - CATALOG_S3_ENDPOINT=http://minio:9000
+      - CATALOG_S3_ACCESS__KEY__ID=admin
+      - CATALOG_S3_SECRET__ACCESS__KEY=password
+      - CATALOG_S3_PATH__STYLE__ACCESS="true"
     networks:
       - iceberg_net
 
