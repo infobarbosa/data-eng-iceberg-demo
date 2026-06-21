@@ -45,7 +45,7 @@ Dentro da pasta `projeto-iceberg`, crie um arquivo com o nome `compose.yml` e co
 ```yaml
 services:
   spark-iceberg:
-    image: tabulario/spark-iceberg:3.5
+    image: tabulario/spark-iceberg:3.5.5_1.8.1
     container_name: spark-iceberg
     depends_on:
       - rest-catalog
@@ -68,7 +68,7 @@ services:
       - iceberg_net
 
   rest-catalog:
-    image: tabulario/iceberg-rest:0.8.0
+    image: tabulario/iceberg-rest:1.6.0
     container_name: rest-catalog
     ports:
       - "8181:8181"
@@ -83,7 +83,7 @@ services:
       - iceberg_net
 
   minio:
-    image: minio/minio:latest
+    image: minio/minio:RELEASE.2025-09-07T16-13-09Z
     container_name: minio
     environment:
       - MINIO_ROOT_USER=admin
@@ -335,7 +335,7 @@ CALL system.rewrite_data_files(table => 'db.pedidos');
 Quando terminar seus estudos, você pode desligar todo o ambiente com um único comando:
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
 Aproveite para explorar e experimentar\! Altere os dados, adicione mais colunas e crie novas tabelas. A prática é a melhor forma de aprender.
