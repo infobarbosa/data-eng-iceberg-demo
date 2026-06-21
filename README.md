@@ -65,6 +65,9 @@ services:
       - SPARK_CATALOG_DEMO_S3_PATH_STYLE_ACCESS=true
       - SPARK_SQL_EXTENSIONS=org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions
       - AWS_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=admin
+      - AWS_SECRET_ACCESS_KEY=password
+    entrypoint: /bin/bash -c "echo 'spark.sql.catalog.demo.s3.path-style-access true' >> /opt/spark/conf/spark-defaults.conf && exec ./entrypoint.sh notebook"
     networks:
       - iceberg_net
 
