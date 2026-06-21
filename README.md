@@ -143,6 +143,14 @@ git clone https://github.com/infobarbosa/datasets-csv-pedidos.git /tmp/data/pedi
 
 ```
 
+**2. Copie os arquivos de dados para o projeto:**
+Agora, copie a pasta de pedidos para dentro da pasta `data` do seu projeto.
+
+```bash
+cp -r /tmp/data/pedidos/data/pedidos ./data/
+
+```
+
 -----
 
 ### Sessão 3: Ingestão e Consulta de Dados 🚀
@@ -183,14 +191,14 @@ TBLPROPERTIES ('format-version'='2');
 
 *Documentação:* Criamos a estrutura da tabela, definindo nome e tipo de cada coluna. `USING iceberg` especifica o formato e `format-version='2'` habilita recursos modernos como `updates` e `deletes`.
 
-**4. Crie uma visão temporária sobre o arquivo CSV:**
-Para facilitar a leitura, criamos uma "view" que aponta para o nosso arquivo.
+**4. Crie uma visão temporária sobre os arquivos CSV:**
+Para facilitar a leitura, criamos uma "view" que aponta para o nosso diretório de arquivos.
 
 ```sql
 CREATE OR REPLACE TEMP VIEW pedidos_raw
 USING csv
 OPTIONS (
-  path = '/home/iceberg/data/pedidos.csv.gz',
+  path = '/home/iceberg/data/pedidos/',
   header = 'true',
   delimiter = ';'
 );
